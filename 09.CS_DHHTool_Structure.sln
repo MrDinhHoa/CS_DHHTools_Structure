@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_SAPTools", "01_SAPTools\01_SAPTools.csproj", "{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ETABSTools", "02_ETABSTools\02_ETABSTools.csproj", "{EF83E9EE-F643-4C9F-A18B-69C120C5075E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF83E9EE-F643-4C9F-A18B-69C120C5075E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF83E9EE-F643-4C9F-A18B-69C120C5075E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF83E9EE-F643-4C9F-A18B-69C120C5075E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF83E9EE-F643-4C9F-A18B-69C120C5075E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1C4E55B-F4EC-4214-9D37-97E25A8AD396}
+	EndGlobalSection
+EndGlobal

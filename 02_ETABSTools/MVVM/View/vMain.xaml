@@ -1,0 +1,28 @@
+﻿<Window x:Class="_02_ETABSTools.MVVM.View.vMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_ETABSTools.MVVM.View" 
+        xmlns:vm="clr-namespace:_02_ETABSTools.MVVM.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=vm:vmMain}"
+        DataContext="{Binding Source={x:Static vm:vmMain.DcMain}}"
+        mc:Ignorable="d"
+        Title="vMain" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Command="{Binding ConnectEtabs}"
+                Content="Connect Etabs ">
+
+        </Button>
+        <Button Grid.Row="1"
+                Command="{Binding CheckDisplacement}"
+                Content="Check ">
+            
+        </Button>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,255 @@
+﻿<Window
+    x:Class="_01_SAPTools.MVVM.View.vWindLoad"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:_01_SAPTools.MVVM.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:vm="clr-namespace:_01_SAPTools.MVVM.ViewModel"
+    Title="Tải Gió/ Wind Load"
+    Width="800"
+    Height="800"
+    d:DataContext="{d:DesignInstance Type=vm:vmWindLoad}"
+    DataContext="{Binding Source={x:Static vm:vmWindLoad.DcWindLoad}}"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <Grid Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2.5*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <TextBlock
+                FontWeight="Bold"
+                Style="{DynamicResource MaterialDesignTextBlock}"
+                Text="Wind Load:" />
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <Grid Margin="5,0,5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Coefficients Kz  -->
+                    <DockPanel>
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Style="{DynamicResource MaterialDesignTextBlock}">
+                            K<Run Text="z" Typography.Variants="Subscript" />
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}">
+                            - Hệ số thay đổi độ cao/<Run FontStyle="Italic">Exposure Coefficients:</Run>
+                        </TextBlock>
+                    </DockPanel>
+                    <TextBox
+                        Grid.Column="1"
+                        Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                        Text="{Binding KzRatio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"
+                        TextAlignment="Center" />
+                    <!--  Coefficients Kd  -->
+                    <DockPanel Grid.Row="1">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Style="{DynamicResource MaterialDesignTextBlock}">
+                            K<Run Typography.Variants="Subscript">d</Run>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}">
+                            - Hệ số hướng gió/<Run FontStyle="Italic">Wind Directionality Factor:</Run>
+                        </TextBlock>
+                    </DockPanel>
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                        Text="{Binding KdRatio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"
+                        TextAlignment="Center" />
+                    <!--  Coefficients Kzt  -->
+                    <DockPanel Grid.Row="2">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Style="{DynamicResource MaterialDesignTextBlock}">
+                            K<Run Typography.Variants="Subscript">zt</Run>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}">
+                            - Hệ số địa hình/<Run FontStyle="Italic">Topographic Factor:</Run>
+                        </TextBlock>
+                    </DockPanel>
+                    <TextBox
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                        Text="{Binding KztRatio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"
+                        TextAlignment="Center" />
+                    <DockPanel Grid.Row="3">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Style="{DynamicResource MaterialDesignTextBlock}">
+                            q<Run Typography.Variants="Subscript">z</Run>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}">
+                            - Hệ số địa hình/<Run FontStyle="Italic">Topographic Factor:</Run>
+                        </TextBlock>
+                    </DockPanel>
+                    <TextBox
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                        Text="{Binding QzPressure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"
+                        TextAlignment="Center" />
+                </Grid>
+            </Grid>
+        </DockPanel>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5,0,5,0"
+            Orientation="Vertical">
+            <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" Text="Load Case A:" />
+            <DataGrid
+                AutoGenerateColumns="False"
+                Background="AntiqueWhite"
+                CanUserAddRows="False"
+                ItemsSource="{Binding DGWindLoadCaseA}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="1.2*" Binding="{Binding NameCase}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="Load Case" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding Zone}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="Zone" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpf}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pf</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpi}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pi</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpf_GCpi}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pf</Run>
+                                -GC<Run Typography.Variants="Subscript">pi</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding WLoadOnFrame, StringFormat=N2}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="q(KN/m)" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" Text="Load Case B:" />
+            <DataGrid
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                ItemsSource="{Binding DGWindLoadCaseB}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="1.5*" Binding="{Binding NameCase}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Load Case" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding Zone}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="Zone" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpf}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pf</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpi}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pi</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding GCpf_GCpi}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock>
+                                GC<Run Typography.Variants="Subscript">pf</Run>
+                                -GC<Run Typography.Variants="Subscript">pi</Run>
+                            </TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding WLoadOnFrame, StringFormat=N2}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="q(KN/m)" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </StackPanel>
+        <DockPanel
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="5,0,5,0"
+            HorizontalAlignment="Right"
+            LastChildFill="True">
+            <Button
+                Width="90"
+                Margin="2,4,2,4"
+                HorizontalAlignment="Right"
+                Command="{Binding BtnOk}"
+                CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Content="OK"
+                Style="{DynamicResource MaterialDesignFlatLightBgButton}" />
+            <Button
+                Width="90"
+                Margin="2,4,2,4"
+                HorizontalAlignment="Right"
+                Command="{Binding BtnOk}"
+                CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Content="OK"
+                Style="{DynamicResource MaterialDesignFlatLightBgButton}" />
+        </DockPanel>
+    </Grid>
+</Window>
