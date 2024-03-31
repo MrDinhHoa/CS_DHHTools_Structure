@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\STUDY\\Programming\\C-Sharp\\09.CS_DHHTool_Structure\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}|01_SAPTools\\01_SAPTools.csproj|d:\\study\\programming\\c-sharp\\09.cs_dhhtool_structure\\01_saptools\\mvvm\\view\\vmain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AE5A569A-AC8A-4AB9-A135-422AD0A67B4B}|01_SAPTools\\01_SAPTools.csproj|solutionrelative:01_saptools\\mvvm\\view\\vmain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vMain.xaml",
+              "DocumentMoniker": "D:\\STUDY\\Programming\\C-Sharp\\09.CS_DHHTool_Structure\\01_SAPTools\\MVVM\\View\\vMain.xaml",
+              "RelativeDocumentMoniker": "01_SAPTools\\MVVM\\View\\vMain.xaml",
+              "ToolTip": "D:\\STUDY\\Programming\\C-Sharp\\09.CS_DHHTool_Structure\\01_SAPTools\\MVVM\\View\\vMain.xaml",
+              "RelativeToolTip": "01_SAPTools\\MVVM\\View\\vMain.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-31T03:58:58.524Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

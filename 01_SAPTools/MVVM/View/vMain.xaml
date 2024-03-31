@@ -513,7 +513,7 @@
                         <TextBlock
                             Margin="2"
                             VerticalAlignment="Center"
-                            Text="Q-Model" />
+                            Text="2D Model" />
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="Azure">
